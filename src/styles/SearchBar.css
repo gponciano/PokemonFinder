@@ -1,0 +1,35 @@
+.search {
+    background-color: #FFF;
+  position: relative;
+  border-radius: 30px;
+  padding: 3px 50px 3px 10px;
+}
+
+.search input {
+  background-color: transparent;
+  outline: none;
+  height: 35px;
+  font-size: 15px;
+  border: 0;
+  width: 100%;
+}
+
+.search button {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background-image: url('src/assets/search.svg');
+    border-radius: 50%;
+    border: 0;
+    color: #FFF;
+    width: 35px;
+    height: 35px;
+    outline: 0;
+}
+
+.search button:hover{
+    cursor: pointer;
+    background-color: #3B4CCA;
+    transform: scale(1.2);
+}
+
