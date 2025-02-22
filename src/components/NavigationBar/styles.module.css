@@ -1,0 +1,4 @@
+.container img {
+    height: 2rem;
+    transition: scale 0.5s;
+}
