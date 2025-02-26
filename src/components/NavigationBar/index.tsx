@@ -51,11 +51,13 @@ export function NavigationBar() {
             sx={{
               mr: 30,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: "Noto Sans",
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'yellow',
               textDecoration: 'none',
+              "&:hover": {
+                  color: 'white',}
             }}
           >
             PokemonCenter
