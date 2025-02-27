@@ -14,7 +14,6 @@ type BerryData = {
   max_harvest:number;
   flavors: string[];
   image: string,
-//   logo: string;
 }
 
 export const GetBerryProperties = () => {
@@ -43,9 +42,10 @@ export const GetBerryProperties = () => {
                         firmness: data.firmness.name,
                         growth_time: data.growth_time,
                         max_harvest: data.max_harvest,
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         flavors: data.flavors.map((flavor: any) => flavor.flavor.name),
                         image: getBerryImage(data.name)
-                        // logo: data.item.url,
+
                     };
                 });
             setBerries(berryData);

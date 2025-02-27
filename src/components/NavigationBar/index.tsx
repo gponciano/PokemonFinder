@@ -42,7 +42,6 @@ export function NavigationBar() {
       <Container maxWidth="xl">
         <Toolbar>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          {/* Properties for the logo */}
           <Typography
             variant="h6"
             noWrap
@@ -108,8 +107,7 @@ export function NavigationBar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
+              fontWeight: 1000,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',

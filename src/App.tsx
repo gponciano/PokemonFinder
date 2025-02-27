@@ -3,6 +3,7 @@ import './global.css'
 
 import { NavigationBar } from './components/NavigationBar'
 import { UIBerryProperties } from './components/Berries/UIBerryProperties';
+import { UISeriesProperties } from './components/Series/UISeriesProperties';
 
 function App() {
   
@@ -11,8 +12,9 @@ function App() {
     <>
    <NavigationBar />
    <div className={styles.container}>
-      <h1>Testing</h1>
+      <UISeriesProperties />
       <UIBerryProperties />
+      
    </div>
    </>
   )

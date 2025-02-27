@@ -1,0 +1,11 @@
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.individualItem{
+    text-align: center;
+    width: 9.375rem;
+}
+

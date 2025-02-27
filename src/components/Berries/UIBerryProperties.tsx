@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-cube";
+
 import styles from './styles.module.css';
 
 export function UIBerryProperties(){
@@ -43,6 +44,8 @@ export function UIBerryProperties(){
               </div>
             </SwiperSlide>
           ))}
+
+          
         </Swiper>
       </div>
   )
