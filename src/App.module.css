@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
 }
 
 .container {
@@ -11,8 +12,15 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 70rem;
-  height: 100vh;
-  
+
+  background-color: #F5F5FA;
   border: 1px solid black;
   
+  height: 100vh; 
+  color: black; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
 }
