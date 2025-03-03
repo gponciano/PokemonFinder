@@ -26,9 +26,9 @@ export function UIMovesProperties() {
       </div>
 
       
-      {activeMove && pokemonByMove.allPokemons.length > 0 && (
+      {activeMove && pokemonByMove[activeMove] && pokemonByMove[activeMove].length > 0 && (
         <div className={styles.pokemonCarousel}>
-          {pokemonByMove.allPokemons.map((pokemon, index) => (
+        {pokemonByMove[activeMove].map((pokemon, index) => (
             <div key={index} className={styles.pokemonCard}>
               <img src={pokemon.image} alt={pokemon.name} />
               <h5>{pokemon.name}</h5>

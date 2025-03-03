@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface PokemonByMove {
-    allPokemons: Pokemon[];
-
+    [moveName: string]: Pokemon[];
 }
 
 interface Pokemon {
@@ -18,54 +17,57 @@ interface Move {
 
 export const GetMovesProperties = () => {
   const [moves, setMoves] = useState<Move[]>([]);
-  const [, setPokemonList] = useState<Move[]>([]);
-  const [pokemonByMove, setPokemonByMove] = useState<PokemonByMove>({allPokemons: []});
+  const [pokemonByMove, setPokemonByMove] = useState<PokemonByMove>({});
   const [loading, setLoading] = useState<boolean>(true);
   const [activeMove, setActiveMove] = useState<string | null>(null);
 
   useEffect(() => {
     
-    axios.get('https://pokeapi.co/api/v2/move/')
-      .then((response) => {
-        setMoves(response.data.results);
+    const fetchMovesAndPokemons = async () => {
+        try {
+            setLoading(true);
 
-        
-        axios.get('https://pokeapi.co/api/v2/pokemon/')
-          .then((pokeResponse) => {
-            setPokemonList(pokeResponse.data.results); 
+            let allMoves: Move[] = [];
+            let nextUrl: string | null = 'https://pokeapi.co/api/v2/move/';
 
-            
-            const pokemonPromises = pokeResponse.data.results.map((poke: { url: string; }) =>
-              axios.get(poke.url)
-            );
+        while (nextUrl) {
+            const { data } = await axios.get(nextUrl);
+            allMoves = [...allMoves, ...data.results];
+            nextUrl = data.next;
+        }
 
-            Promise.all(pokemonPromises)
-              .then((pokemonResponses) => {
-                
-                const pokemonData = pokemonResponses.map((response) => ({
-                  name: response.data.name,
-                  image: response.data.sprites.front_default,
-                }));
+        setMoves(allMoves);
 
-                
-                setPokemonByMove({ allPokemons: pokemonData });
-              });
-          });
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      })
-      .finally(() => {
+        const movePokemonMap: PokemonByMove = {};
+
+        await Promise.all(
+            allMoves.map(async (move) => {
+                const { data } = await axios.get(move.url);
+
+                const pokemons = data.learned_by_pokemon.map(
+                    (poke: { name: string; url: string}) => ({
+                        name:poke.name,
+                        image:`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${poke.url.split("/")[6]}.png`,
+                    })
+                );
+
+                movePokemonMap[move.name] = pokemons;
+            })
+        );
+        setPokemonByMove(movePokemonMap);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchMovesAndPokemons();
   }, []);
 
-
-const togglePokemonVisibility = (moveName: string) => {
+  const togglePokemonVisibility = (moveName: string) => {
     setActiveMove((prev) => (prev === moveName ? null : moveName));
   };
 
-  return {moves, pokemonByMove, loading, activeMove, togglePokemonVisibility};
-  
+  return { moves, pokemonByMove, loading, activeMove, togglePokemonVisibility };
 };
-

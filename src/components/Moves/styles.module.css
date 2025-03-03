@@ -1,20 +1,46 @@
 .container {
     text-align: center;
     padding: 20px;
+
+    margin-top: 8rem;
+    width: 80%;
   }
+
+.title{
+    font-family: "Press Start 2P", cursive; 
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.movesCarousel::-webkit-scrollbar{
+  width: 1rem;
+  height: 12px;
   
-  /* Moves Horizontal Scroll */
-  .movesCarousel {
+}
+
+.movesCarousel::-webkit-scrollbar-track {
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); 
+    }
+
+.movesCarousel::-webkit-scrollbar-thumb{
+    background-color: #ffcc00;
+    border-radius: 12rem;
+}
+
+.movesCarousel {
     display: flex;
     overflow-x: auto;
     gap: 10px;
     padding: 10px;
     white-space: nowrap;
-    scrollbar-width: thin;
-    scrollbar-color: #ffcc00 transparent;
-  }
-  
-  .moveButton {
+    
+    /* scrollbar-width:thin; */
+    /* scrollbar-color: #ffcc00 transparent; */
+    
+}
+
+
+.moveButton {
     background: #ffcc00;
     border: none;
     padding: 12px 20px;
@@ -24,13 +50,13 @@
     transition: 0.3s;
   }
   
-  .moveButton:hover {
+.moveButton:hover {
     background: #ffaa00;
     transform: scale(1.1);
   }
   
-  /* Pokémon Nested Carousel */
-  .pokemonCarousel {
+
+.pokemonCarousel {
     display: flex;
     overflow-x: auto;
     gap: 10px;
@@ -40,7 +66,7 @@
     scrollbar-color: #ffcc00 transparent;
   }
   
-  .pokemonCard {
+.pokemonCard {
     background: white;
     border: 2px solid #ffcc00;
     border-radius: 12px;
@@ -52,10 +78,10 @@
     animation: fadeIn 0.5s forwards;
   }
   
-  .pokemonCard:hover {
+.pokemonCard:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px 12px rgba(255, 204, 0, 0.5);
-  }
+}
   
   /* Fade-in animation */
   @keyframes fadeIn {
