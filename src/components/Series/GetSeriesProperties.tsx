@@ -6,6 +6,7 @@ interface Series {
     name: string;
     overview: string;
     poster_path: string;
+    first_air_date: string;
 }
 export function GetSeriesProperties(){
     const [shows, setShows] = useState<Series[]>([]);

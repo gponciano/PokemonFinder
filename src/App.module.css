@@ -1,26 +1,21 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
   
-}
-
-.container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70rem;
-
-  background-color: #F5F5FA;
-  border: 1px solid black;
+  .container {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    gap: 2rem;              
+    width: 100%;            
+    max-width: 70rem;      
+    background-color: #F5F5FA;
+    border: 1px solid black;
+    color: black;
+    margin: auto;           
+    padding: 2rem;           
+  }
   
-  height: 100vh; 
-  color: black; 
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-
-}

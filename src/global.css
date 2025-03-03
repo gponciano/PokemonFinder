@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #F5F5FA;
+    
 }
 
 html, body {
@@ -23,8 +23,11 @@ html, body {
     font-family: "Noto Sans", serif;
 }
 
+h2 {
+  color: red;
+}
+
 button {
-    background: #ffcc00;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
@@ -37,15 +40,3 @@ button {
     background: #ff4500;
   }
   
-  .flex {
-    display: flex;
-    align-items: center;
-  }
-  
-  .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
- 

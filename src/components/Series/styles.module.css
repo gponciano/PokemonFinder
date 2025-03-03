@@ -1,11 +1,33 @@
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
+.title {
+    font-family: "Press Start 2P", cursive;
+    text-align: center;
+    margin-top: 6rem; 
 }
 
-.individualItem{
-    text-align: center;
-    width: 9.375rem;
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
+
+.gridItem {
+    text-align: center;
+}
+
+.gridItem img {
+    border-radius: 10px;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    height: 15rem;
+}
+
+.gridItem img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 

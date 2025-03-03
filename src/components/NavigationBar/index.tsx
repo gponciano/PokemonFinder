@@ -41,7 +41,6 @@ export function NavigationBar() {
     <AppBar className={styles.container} sx={{ backgroundColor: '#F40009' }}>
       <Container maxWidth="xl">
         <Toolbar>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -59,7 +58,7 @@ export function NavigationBar() {
                   color: 'white',}
             }}
           >
-            PokemonCenter
+            PokémonCenter
            <img src={logo}></img>
           </Typography>
 
