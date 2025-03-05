@@ -1,6 +1,6 @@
 .container {
     text-align: center;
-    padding: 20px;
+    padding: 1.25rem;
 
     margin-top: 8rem;
     width: 80%;
@@ -11,27 +11,32 @@
     text-align: center;
     margin-bottom: 1rem;
 }
-
+.movesCarousel{
+  margin-top: 3rem;
+}
 .movesCarousel::-webkit-scrollbar{
   width: 1rem;
-  height: 12px;
+  height: 0.75rem;
   
 }
 
 .movesCarousel::-webkit-scrollbar-track {
-    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); 
-    }
+    -webkit-box-shadow: 0 4px 10px rgba(30, 144, 255, 0.2), 0 2px 4px rgba(30, 144, 255, 0.15);
+    
+}
 
 .movesCarousel::-webkit-scrollbar-thumb{
-    background-color: #ffcc00;
-    border-radius: 12rem;
+    background-color: dodgerblue;
+    outline: 1px solid #333333;
+    border-radius: 2rem;
+    width: 5rem;
 }
 
 .movesCarousel {
     display: flex;
     overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
+    gap: 0.625rem;
+    padding: 0.625rem;
     white-space: nowrap;
     
     /* scrollbar-width:thin; */
@@ -41,38 +46,39 @@
 
 
 .moveButton {
-    background: #ffcc00;
+    background: dodgerblue;
     border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
   }
   
 .moveButton:hover {
-    background: #ffaa00;
+    background: white;
     transform: scale(1.1);
+    color: dodgerblue;
   }
   
 
 .pokemonCarousel {
     display: flex;
     overflow-x: auto;
-    gap: 10px;
-    padding: 10px;
-    margin-top: 20px;
-    scrollbar-width: thin;
-    scrollbar-color: #ffcc00 transparent;
+    gap:  0.625rem;
+    padding:  0.625rem;
+    margin-top: 1.25rem;
+    /* scrollbar-width: thin;
+    scrollbar-color: dodgerblue transparent; */
   }
   
 .pokemonCard {
     background: white;
-    border: 2px solid #ffcc00;
-    border-radius: 12px;
-    padding: 10px;
+    /* border: 2px solid dodgerblue; */
+    border-radius: 0.75rems;
+    padding: 0.625rem;
     text-align: center;
-    min-width: 120px;
+    min-width: 7.5rem;
     transition: transform 0.3s ease-in-out, opacity 0.3s;
     opacity: 0;
     animation: fadeIn 0.5s forwards;
@@ -82,6 +88,26 @@
     transform: scale(1.1);
     box-shadow: 2px 2px 12px rgba(255, 204, 0, 0.5);
 }
+
+.pokemonCarousel::-webkit-scrollbar{
+  width: 1rem;
+  height: 0.75rem;
+  
+}
+
+.pokemonCarousel::-webkit-scrollbar-track {
+    -webkit-box-shadow: 0 4px 10px rgba(30, 144, 255, 0.2), 0 2px 4px rgba(30, 144, 255, 0.15);
+    
+}
+
+.pokemonCarousel::-webkit-scrollbar-thumb{
+    background-color: dodgerblue;
+    outline: 1px solid #333333;
+    border-radius: 2rem;
+    width: 5rem;
+}
+
+
   
   /* Fade-in animation */
   @keyframes fadeIn {
