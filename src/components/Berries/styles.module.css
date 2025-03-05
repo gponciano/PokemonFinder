@@ -9,18 +9,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px;
-    border-radius: 15px;
+    padding: 1.875rem;
+    border-radius: 0.940rem;
     text-align: center;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 600px; 
+    max-width: 37.5rem; 
     margin: 2rem auto; 
 }
 
 .swiper {
     width: 100%;
-    max-width: 500px;
+    max-width: 31.25rem;
 }
 
 .slide {
@@ -32,8 +32,8 @@
     background: #fff;
     height: 20rem;
     color: red;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 1.25rem;
+    border-radius: .75rem;
     text-align: center;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     border: 3px solid black;
@@ -59,9 +59,9 @@
 .swiper-button-prev,
 .swiper-button-next {
     color: #2a75bb !important; 
-    font-size: 18px;
-    width: 40px;
-    height: 40px;
+    font-size: 1.125rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,8 +69,8 @@
 
 .swiper-pagination-bullet {
     background: #3c5aa6;
-    width: 12px;
-    height: 10px;
+    width: 0.75rem;
+    height: 0.625rem;
     border-radius: 50%;
     opacity: 0.4;
     transition: background 0.3s ease-in-out, transform 0.2s;
