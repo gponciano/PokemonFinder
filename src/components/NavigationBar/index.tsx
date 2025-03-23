@@ -11,6 +11,9 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
+import { useNavigate } from "react-router";
+
+
 import styles from './styles.module.css';
 import logo from '../../assets/pokeball.png'
 
@@ -36,6 +39,12 @@ export function NavigationBar() {
     setAnchorElUser(null);
   };
 
+  const navigate = useNavigate(); // Initialize navigation
+
+  const handleNavigate = (page: string) => {
+    navigate(`/${page.toLowerCase()}`);
+  };
+
   return (
     <AppBar className={styles.container} sx={{ backgroundColor: '#F40009' }}>
       <Container maxWidth="xl">
@@ -44,21 +53,23 @@ export function NavigationBar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            onClick={() => navigate("/")}
             sx={{
               mr: 30,
               display: { xs: 'none', md: 'flex' },
               fontFamily: "Noto Sans",
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'yellow',
+              color: 'white',
               textDecoration: 'none',
               "&:hover": {
-                  color: 'white',}
+                  color: 'yellow',
+                  cursor: 'pointer'}
             }}
           >
+            {/* <h2 style={{ cursor: "pointer" }}> PokémonCenter </h2> */}
             PokémonCenter
-           <img src={logo}></img>
+           <img src={logo} alt='logo' style={{ cursor: "pointer" }}></img>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -118,7 +129,10 @@ export function NavigationBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => {
+                  navigate(`/${page.toLowerCase()}`);
+                  handleNavigate(page)
+                }}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}

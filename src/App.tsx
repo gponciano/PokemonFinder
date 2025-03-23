@@ -6,7 +6,7 @@ import { UIBerryProperties } from './components/Berries/UIBerryProperties';
 import { UISeriesProperties } from './components/Series/UISeriesProperties';
 import { UIMovesProperties } from './components/Moves/UIMovesProperties';
 
-function App() {
+export function App() {
   
 
   return (
